@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" verbose="1" parallel="false">
+	<test name="Test_One_Lin">
+		<classes>
+			<class name="Demo_Selenium.Check_Youtube_Message" />
+		</classes>
+	</test>
+</suite>

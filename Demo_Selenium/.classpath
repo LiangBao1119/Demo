@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/libs/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/libs/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/catalina-storeconfig.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/ecj-4.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/jaspic-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-i18n-ru.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-jni.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-util-scan.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/tomcat-websocket.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liangbao/Documents/liangbao/apache-tomcat-8.5.38/lib/websocket-api.jar"/>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

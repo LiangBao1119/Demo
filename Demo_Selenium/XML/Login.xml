@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Login> 
+	<fpk_user>fpk006@testmail.footprintku.com</fpk_user>
+	<fpk_pwd>fpk006</fpk_pwd>
+	<fpk_Share_user>fpk004@testmail.footprintku.com</fpk_Share_user>
+	<fpk_Share_userpwd>fpk004</fpk_Share_userpwd>
+	<fpk_pm>autotestpm001</fpk_pm>
+	<fpk_pm_pwd>autotestpm001</fpk_pm_pwd>
+	<fpk_Creator>csy003@testmail.footprintku.com</fpk_Creator>
+	<fpk_Creator_pwd>csy003</fpk_Creator_pwd>
+	<fpk_Checker>qsy003@testmail.footprintku.com</fpk_Checker>
+	<fpk_Checker_pwd>qsy003</fpk_Checker_pwd>
+	<fpk_Verifier>vsy003@testmail.footprintku.com</fpk_Verifier>
+	<fpk_Verifier_pwd>vsy003</fpk_Verifier_pwd>
+	<fpk_Showcase_pm>autotestpm001</fpk_Showcase_pm>
+	<fpk_Showcase_pm_pwd>autotestpm001</fpk_Showcase_pm_pwd>
+	<fpk_Showcase_Creator>showcsy002@testmail.footprintku.com</fpk_Showcase_Creator>
+	<fpk_Showcase_Creator_pwd>csy002</fpk_Showcase_Creator_pwd>
+	<fpk_Showcase_Checker>showqsy002@testmail.footprintku.com</fpk_Showcase_Checker>
+	<fpk_Showcase_Checker_pwd>qsy002</fpk_Showcase_Checker_pwd>
+	<fpk_Showcase_Verifier>showvsy002@testmail.footprintku.com</fpk_Showcase_Verifier>
+	<fpk_Showcase_Verifier_pwd>vsy002</fpk_Showcase_Verifier_pwd>
+</Login> 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="12322" started-at="2020-07-06T08:35:21Z" finished-at="2020-07-06T08:35:34Z">
+    <groups>
+    </groups>
+    <test name="Test_One_Lin" duration-ms="12322" started-at="2020-07-06T08:35:21Z" finished-at="2020-07-06T08:35:34Z">
+      <class name="Demo_Selenium.Check_Youtube_Message">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="beforeTest" is-config="true" duration-ms="11274" started-at="2020-07-06T08:35:21Z" finished-at="2020-07-06T08:35:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Studio_NPT()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="Studio_NPT" duration-ms="1011" started-at="2020-07-06T08:35:33Z" finished-at="2020-07-06T08:35:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Studio_NPT -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-07-06T08:35:34Z" finished-at="2020-07-06T08:35:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Demo_Selenium.Check_Youtube_Message -->
+    </test> <!-- Test_One_Lin -->
+  </suite> <!-- Suite -->
+</testng-results>
