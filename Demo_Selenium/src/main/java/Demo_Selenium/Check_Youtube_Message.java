@@ -66,13 +66,39 @@ public class Check_Youtube_Message {
 		
 	}
 	
-	public void Get_Msg() {
+	public void Get_Msg() throws InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(webdriver, 30);
 		List<WebElement> rows;
+		int Count = 1,Acc = 1;
 		String Get_Msg;
 		String Find_Msg = "(//*[@id='content-text'])";
 
+		while(true) {
+			
+			Boolean Is_Find = Other.isContentAppeared(webdriver, Find_Msg+"["+Count+"]");
+			if (Is_Find) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Find_Msg+"["+Count+"]")));
+				Other.JSscrollbar(Find_Msg+"["+Count+"]");
+				Acc = 1;
+			} else {
+				Thread.sleep(500);
+				Is_Find = Other.isContentAppeared(webdriver, Find_Msg+"["+Count+"]");
+				if (Is_Find) {
+					wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Find_Msg+"["+Count+"]")));
+					Other.JSscrollbar(Find_Msg+"["+Count+"]");
+					Acc = 1;
+				} else {
+					if (Acc == 5) {
+						break;
+					}
+					Acc++;
+					System.out.println(Acc);
+				}
+			}
+			Count++;
+		}
+		
 		rows = webdriver.findElements(By.xpath(Find_Msg));
 		for (int i = 1; i <= rows.size(); i++) {
 			Get_Msg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
@@ -81,6 +107,8 @@ public class Check_Youtube_Message {
 		}
 		
 	}
+	
+	
 	
 	@AfterTest
 	public void afterTest() throws Exception {
