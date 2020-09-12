@@ -1,5 +1,6 @@
 package Demo_Selenium;
 
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +24,8 @@ public class Check_Youtube_Message {
 	Base64.Encoder encoder = Base64.getEncoder();
 	WebDriver webdriver = null;
 	String Chrome_Path = "./EXE/chromedriver.exe";	
-	String URL = "https://www.youtube.com/watch?v=NDSVf2azIGs";
+//	String URL = "https://www.youtube.com/watch?v=NDSVf2azIGs";
+	String URL = "https://youtu.be/8_MpbRWh1jY";
 	OtherAction Other = null;
 	long TESTSTARTTIME = 0;
 	String TESTCLASSNAME = "";
@@ -73,6 +75,7 @@ public class Check_Youtube_Message {
 		int Count = 1,Acc = 1;
 		String Get_Msg;
 		String Find_Msg = "(//*[@id='content-text'])";
+		ArrayList<String> Array_Msg = new ArrayList<String>();
 
 		while(true) {
 			
@@ -99,13 +102,18 @@ public class Check_Youtube_Message {
 			Count++;
 		}
 		
+		
 		rows = webdriver.findElements(By.xpath(Find_Msg));
 		for (int i = 1; i <= rows.size(); i++) {
 			Get_Msg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
 					Find_Msg+"["+i+"]"))).getText();
+			Get_Msg = Get_Msg.replace(",", " ");
 			System.out.println(Get_Msg);
+			Array_Msg.add(Get_Msg);
 		}
 		
+		Message_Output_Json.createJsonFile(Array_Msg, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
+//		Message_Output_Txt.Output_Txt(Array_Msg);
 	}
 	
 	
