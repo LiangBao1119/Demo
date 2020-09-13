@@ -12,14 +12,11 @@ import com.google.gson.JsonObject;
 import Demo_Action.Json_Format_Tool;
 
 public class Message_Output_Json {
-    /**
-     * 生成.json格式檔案
-     */
+    
     public static boolean createJsonFile(ArrayList<String> Array_Msg/*,String jsonString*/, String filePath, String fileName) {
         // 標記檔案生成是否成功
         boolean flag = true;
-
-        // 拼接檔案完整路徑
+        
         String fullPath = filePath + File.separator + fileName + ".json";
 
         // 生成json格式檔案
@@ -67,7 +64,7 @@ public class Message_Output_Json {
                 root.addProperty("time","留言時間");
                 root.addProperty("video_url","影片的URL");
                 
-                //假设身高是double，我们取小数点后一位
+                //假設身高是double，我们取小數點後一位
 //                double height=185.5345;
 //                root.addProperty("height",(double)(Math.round(height*10)/10.0));
 //                JsonArray array = new JsonArray();
@@ -80,7 +77,7 @@ public class Message_Output_Json {
 //                array.add(major1);
 //                array.add( major2);
 //                root.add("major",array);
-                //假设位置x,y都是double型的,现在对他们取整
+                //假設位置x,y都是double型的,现在對他們取整
 //                double x=30.0045;
 //                double y=30.1123;
 //                JsonObject houloc=new JsonObject();
