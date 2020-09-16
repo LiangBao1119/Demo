@@ -74,8 +74,14 @@ public class Check_Youtube_Message {
 		List<WebElement> rows;
 		int Count = 1,Acc = 1;
 		String Get_Msg;
+		String Get_Name;
+		String Get_Cus_Name;
 		String Find_Msg = "(//*[@id='content-text'])";
-		ArrayList<String> Array_Msg = new ArrayList<String>();
+		String Find_Name = "(//*[@id='name']//*[@id='text'])";
+		String Find_Cus_Name = "(//*[@id='top-row']//*[@id='text']/a)";
+//		ArrayList<String> Array_Msg = new ArrayList<String>();
+		
+		String [][] Array = new String [3][];
 
 		while(true) {
 			
@@ -104,19 +110,36 @@ public class Check_Youtube_Message {
 		
 		
 		rows = webdriver.findElements(By.xpath(Find_Msg));
+		Array = new String [3][rows.size()];
 		for (int i = 1; i <= rows.size(); i++) {
 			Get_Msg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
 					Find_Msg+"["+i+"]"))).getText();
 			Get_Msg = Get_Msg.replace(",", " ");
 			System.out.println(Get_Msg);
-			Array_Msg.add(Get_Msg);
+			
+			Get_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					Find_Name+"["+i+"]"))).getText();
+			Get_Name = Get_Name.replace(",", " ");
+			System.out.println(Get_Name);
+
+			Get_Cus_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					Find_Cus_Name))).getText();
+			Get_Cus_Name = Get_Cus_Name.replace(",", " ");
+			System.out.println(Get_Cus_Name);
+			
+//			Array_Msg.add(Get_Name);
+//			Array_Msg.add(Get_Cus_Name);
+//			Array_Msg.add(Get_Msg);
+			
+			int a = i-1;
+			Array [0][a] = Get_Name;
+			Array [1][a] = Get_Cus_Name;
+			Array [2][a] = Get_Msg;
 		}
 		
-		Message_Output_Json.createJsonFile(Array_Msg, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
+		Message_Output_Json.createJsonFile(Array, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
 //		Message_Output_Txt.Output_Txt(Array_Msg);
 	}
-	
-	
 	
 	@AfterTest
 	public void afterTest() throws Exception {
