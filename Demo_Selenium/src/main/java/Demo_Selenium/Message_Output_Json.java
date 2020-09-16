@@ -4,17 +4,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.ArrayList;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import Demo_Action.Json_Format_Tool;
 
 public class Message_Output_Json {
-    
+ 
     public static boolean createJsonFile(String [][] Array
     		/*,String jsonString*/, String filePath, String fileName) {
+
         // 標記檔案生成是否成功
         boolean flag = true;
         
@@ -51,10 +50,11 @@ public class Message_Output_Json {
             	jsonString_Cus_Name = Check_jsonString(jsonString_Cus_Name);
             	jsonString_Msg = Check_jsonString(jsonString_Msg);
             	
-            	System.out.println(jsonString_Name);
-                System.out.println(jsonString_Cus_id);
-                System.out.println(jsonString_Cus_Name);
-                System.out.println(jsonString_Msg);
+            	System.out.println("username:"+jsonString_Name);
+                System.out.println("cus_userid:"+jsonString_Cus_id);
+                System.out.println("cus_username:"+jsonString_Cus_Name);
+                System.out.println("message:"+jsonString_Msg);
+                System.out.println("-------------");
                 
                 root.addProperty("userid","發言者ID");
                 root.addProperty("username",jsonString_Name);
@@ -86,7 +86,6 @@ public class Message_Output_Json {
 //                root.add("houseLocation",houloc);
                 
                 // 格式化json字串
-//                jsonString = Json_Format_Tool.formatJson(jsonString);
 //              jsonString_Name = Json_Format_Tool.formatJson(root.toString());
 //              jsonString_Cus_id = Json_Format_Tool.formatJson(root.toString());
 //              jsonString_Cus_Name = Json_Format_Tool.formatJson(root.toString());
@@ -95,10 +94,12 @@ public class Message_Output_Json {
                 
                 // 將格式化後的字串寫入檔案
                 write.write(jsonString);
+
 //              write.write(jsonString_Name);
 //              write.write(jsonString_Cus_id);
 //              write.write(jsonString_Cus_Name);
 //              write.write(jsonString_Msg);
+
             }
             
             write.flush();
@@ -131,7 +132,9 @@ public class Message_Output_Json {
             //將換行轉換一下，因為JSON串中字串不能出現顯式的換行  
             jsonString = jsonString.replaceAll("\n", "\\u000a");  
         }  
-    	return jsonString;
+    	
+        return jsonString;
 	}
-       
+        
+        
 }

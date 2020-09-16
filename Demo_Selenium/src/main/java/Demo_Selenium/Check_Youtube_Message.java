@@ -73,6 +73,7 @@ public class Check_Youtube_Message {
 		List<WebElement> rows;
 		int Count = 1,Acc = 1;
 		String Get_Msg;
+
 		String Get_Name;
 		String Get_Cus_Name;
 		String Get_Cus_id;
@@ -107,15 +108,16 @@ public class Check_Youtube_Message {
 			Count++;
 		}
 		
-		
 		rows = webdriver.findElements(By.xpath(Find_Msg));
+
 		Array = new String [4][rows.size()];
+
 		for (int i = 1; i <= rows.size(); i++) {
 			Get_Msg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
 					Find_Msg+"["+i+"]"))).getText();
 			Get_Msg = Get_Msg.replace(",", " ");
 			System.out.println(Get_Msg);
-			
+	
 			Get_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
 					Find_Name+"["+i+"]"))).getText();
 			Get_Name = Get_Name.replace(",", " ");
@@ -133,6 +135,7 @@ public class Check_Youtube_Message {
 			System.out.println(Get_Cus_id);
 			
 			int a = i-1;
+			System.out.println("-------------");
 			Array [0][a] = Get_Name;
 			Array [1][a] = Get_Cus_id;
 			Array [2][a] = Get_Cus_Name;
@@ -142,6 +145,8 @@ public class Check_Youtube_Message {
 		Message_Output_Json.createJsonFile(Array, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
 //		Message_Output_Txt.Output_Txt(Array_Msg);
 	}
+	
+	
 	
 	@AfterTest
 	public void afterTest() throws Exception {
