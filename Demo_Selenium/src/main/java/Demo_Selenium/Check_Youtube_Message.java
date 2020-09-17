@@ -73,15 +73,20 @@ public class Check_Youtube_Message {
 		List<WebElement> rows;
 		int Count = 1,Acc = 1;
 		String Get_Msg;
-
 		String Get_Name;
-		String Get_Cus_Name;
 		String Get_Cus_id;
+		String Get_Cus_Name;
+		String Get_id;
+		String Get_Time;
 		String Find_Msg = "(//*[@id='content-text'])";
-		String Find_Name = "(//*[@id='name']//*[@id='text'])";
+		String Find_Name = "(//*[@id='author-text']/span)";
+//		String FInd_Name_Owner = "(//*[@id='author-text']/span)[4][contains(@class,'channel-owner')]";
 		String Find_Cus_Name = "(//*[@id='top-row']//*[@id='text']/a)";
+		String Find_id = "(//*[@id='author-text'])";
+		String Find_Time = "(//*[@id='main']/div/div[2]/yt-formatted-string/a)";
 		
-		String [][] Array = new String [4][];
+		int a = 0 ;
+		String [][] Array = new String [a][];
 
 		while(true) {
 			
@@ -110,7 +115,7 @@ public class Check_Youtube_Message {
 		
 		rows = webdriver.findElements(By.xpath(Find_Msg));
 
-		Array = new String [4][rows.size()];
+		Array = new String [rows.size()][7];
 
 		for (int i = 1; i <= rows.size(); i++) {
 			Get_Msg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
@@ -118,11 +123,6 @@ public class Check_Youtube_Message {
 			Get_Msg = Get_Msg.replace(",", " ");
 			System.out.println(Get_Msg);
 	
-			Get_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
-					Find_Name+"["+i+"]"))).getText();
-			Get_Name = Get_Name.replace(",", " ");
-			System.out.println(Get_Name);
-
 			Get_Cus_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
 					Find_Cus_Name))).getText();
 			Get_Cus_Name = Get_Cus_Name.replace(",", " ");
@@ -134,16 +134,41 @@ public class Check_Youtube_Message {
 			Get_Cus_id = Get_Cus_id.substring(32);
 			System.out.println(Get_Cus_id);
 			
-			int a = i-1;
+			Get_Name = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					Find_Name+"["+i+"]"))).getText();
+			String Find_Owner = "(//*[@id='author-text']/span)["+i+"][contains(@class,'channel-owner')]";
+			Boolean Is_Owner = Other.isContentAppeared(webdriver, Find_Owner);
+			if (Is_Owner) {
+				Get_Name = Get_Cus_Name;
+			}
+			Get_Name = Get_Name.replace(",", " ");
+			System.out.println(Get_Name);
+
+			Get_id = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					Find_id+"["+i+"]"))).getAttribute("href");
+			Get_id = Get_id.replace(",", " ");
+			Get_id = Get_id.substring(32);
+			System.out.println(Get_id);
+			
+			Get_Time = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+					Find_Time+"["+i+"]"))).getText();
+			Get_Time = Get_Time.replace(",", " ");
+			System.out.println(Get_Time);
+			
+			a = i-1;
 			System.out.println("-------------");
-			Array [0][a] = Get_Name;
-			Array [1][a] = Get_Cus_id;
-			Array [2][a] = Get_Cus_Name;
-			Array [3][a] = Get_Msg;
+			Array [a][0] = Get_id;
+			Array [a][1] = Get_Name;
+			Array [a][2] = Get_Cus_id;
+			Array [a][3] = Get_Cus_Name;
+			Array [a][4] = Get_Msg;
+			Array [a][5] = Get_Time;
+			Array [a][6] = URL;
 		}
 		
-		Message_Output_Json.createJsonFile(Array, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
-//		Message_Output_Txt.Output_Txt(Array_Msg);
+		boolean Is_Json = Message_Output_Json.createJsonFile(Array, "C:\\Users\\USER\\Documents\\GitHub\\Demo\\Demo_Selenium\\", "OutPut");
+		System.out.println("JSON檔是否新增成功:"+Is_Json);
+		//		Message_Output_Txt.Output_Txt(Array_Msg);
 	}
 	
 	

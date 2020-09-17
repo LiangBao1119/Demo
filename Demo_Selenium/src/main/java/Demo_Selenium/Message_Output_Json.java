@@ -33,36 +33,48 @@ public class Message_Output_Json {
             
             String jsonString = "";
             String jsonString_Msg = "";
+            String jsonString_id = "";
             String jsonString_Name = "";
             String jsonString_Cus_id = "";
             String jsonString_Cus_Name = "";
+            String jsonString_Time = "";
+            String jsonString_URL = "";
             Writer write = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
             JsonObject root = new JsonObject();
             
             for (int i = 0; i < Array.length; i++) {
-            	jsonString_Name = Array [0][i];
-            	jsonString_Cus_id = Array[1][i];
-            	jsonString_Cus_Name = Array [2][i];
-            	jsonString_Msg = Array [3][i];
+            	jsonString_id = Array [i][0];
+            	jsonString_Name = Array [i][1];
+            	jsonString_Cus_id = Array[i][2];
+            	jsonString_Cus_Name = Array [i][3];
+            	jsonString_Msg = Array [i][4];
+            	jsonString_Time = Array [i][5];
+            	jsonString_URL = Array [i][6];
             	
+            	jsonString_id = Check_jsonString(jsonString_id);
             	jsonString_Name = Check_jsonString(jsonString_Name);
             	jsonString_Cus_id = Check_jsonString(jsonString_Cus_id);
             	jsonString_Cus_Name = Check_jsonString(jsonString_Cus_Name);
             	jsonString_Msg = Check_jsonString(jsonString_Msg);
+            	jsonString_Time = Check_jsonString(jsonString_Time);
+            	jsonString_URL = Check_jsonString(jsonString_URL);
             	
+            	System.out.println("userid:"+jsonString_id);
             	System.out.println("username:"+jsonString_Name);
                 System.out.println("cus_userid:"+jsonString_Cus_id);
                 System.out.println("cus_username:"+jsonString_Cus_Name);
                 System.out.println("message:"+jsonString_Msg);
+                System.out.println("time:"+jsonString_Time);
+                System.out.println("video_url:"+jsonString_URL);
                 System.out.println("-------------");
                 
-                root.addProperty("userid","發言者ID");
+                root.addProperty("userid",jsonString_id);
                 root.addProperty("username",jsonString_Name);
                 root.addProperty("cus_userid",jsonString_Cus_id);
                 root.addProperty("cus_username",jsonString_Cus_Name);
                 root.addProperty("message",jsonString_Msg);
-                root.addProperty("time","留言時間");
-                root.addProperty("video_url","影片的URL");
+                root.addProperty("time",jsonString_Time);
+                root.addProperty("video_url",jsonString_URL);
                 
                 //假設身高是double，我们取小數點後一位
 //                double height=185.5345;
@@ -91,6 +103,7 @@ public class Message_Output_Json {
 //              jsonString_Cus_Name = Json_Format_Tool.formatJson(root.toString());
 //              jsonString_Msg = Json_Format_Tool.formatJson(root.toString());
                 jsonString = Json_Format_Tool.formatJson(root.toString());
+//                jsonString = Json_Format_Tool.formatJson(jsonString);
                 
                 // 將格式化後的字串寫入檔案
                 write.write(jsonString);
@@ -115,23 +128,22 @@ public class Message_Output_Json {
     
     public static String Check_jsonString(String jsonString) {
 		
-    	if(jsonString.indexOf("'")!=-1){  
-            //將單引號轉義一下，因為JSON串中的字串型別可以單引號引起來的  
-            jsonString = jsonString.replaceAll("'", "\\'");  
-        }  
-        if(jsonString.indexOf("\"")!=-1){  
-            //將雙引號轉義一下，因為JSON串中的字串型別可以單引號引起來的  
-            jsonString = jsonString.replaceAll("\"", "\\\"");  
-        }  
-          
-        if(jsonString.indexOf("\r\n")!=-1){  
-            //將回車換行轉換一下，因為JSON串中字串不能出現顯式的回車換行  
-            jsonString = jsonString.replaceAll("\r\n", "\\u000d\\u000a");  
-        }  
-        if(jsonString.indexOf("\n")!=-1){  
-            //將換行轉換一下，因為JSON串中字串不能出現顯式的換行  
-            jsonString = jsonString.replaceAll("\n", "\\u000a");  
-        }  
+    	if(jsonString.indexOf("'")!=-1){
+            //將單引號轉義一下，因為JSON串中的字串型別可以單引號引起來的
+            jsonString = jsonString.replaceAll("'", "\\'");
+        }
+        if(jsonString.indexOf("\"")!=-1){
+            //將雙引號轉義一下，因為JSON串中的字串型別可以單引號引起來的
+            jsonString = jsonString.replaceAll("\"", "\\\"");
+        }
+        if(jsonString.indexOf("\r\n")!=-1){
+            //將回車換行轉換一下，因為JSON串中字串不能出現顯式的回車換行
+            jsonString = jsonString.replaceAll("\r\n", "\\u000d\\u000a");
+        }
+        if(jsonString.indexOf("\n")!=-1){
+            //將換行轉換一下，因為JSON串中字串不能出現顯式的換行
+            jsonString = jsonString.replaceAll("\n", "\\u000a");
+        }
     	
         return jsonString;
 	}
