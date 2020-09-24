@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="31081" started-at="2020-09-17T09:21:31Z" finished-at="2020-09-17T09:22:02Z">
+  <suite name="Suite" duration-ms="36945" started-at="2020-09-22T07:20:52Z" finished-at="2020-09-22T07:21:29Z">
     <groups>
     </groups>
-    <test name="Test_One_Lin" duration-ms="31081" started-at="2020-09-17T09:21:31Z" finished-at="2020-09-17T09:22:02Z">
+    <test name="Test_One_Lin" duration-ms="36945" started-at="2020-09-22T07:20:52Z" finished-at="2020-09-22T07:21:29Z">
       <class name="Demo_Selenium.Check_Youtube_Message">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="beforeTest" is-config="true" duration-ms="10270" started-at="2020-09-17T09:21:31Z" finished-at="2020-09-17T09:21:41Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="beforeTest" is-config="true" duration-ms="15387" started-at="2020-09-22T07:20:52Z" finished-at="2020-09-22T07:21:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="Studio_NPT()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="Studio_NPT" duration-ms="20746" started-at="2020-09-17T09:21:41Z" finished-at="2020-09-17T09:22:02Z">
+        <test-method status="PASS" signature="Studio_NPT()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="Studio_NPT" duration-ms="17326" started-at="2020-09-22T07:21:07Z" finished-at="2020-09-22T07:21:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Studio_NPT -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="afterTest" is-config="true" duration-ms="16" started-at="2020-09-17T09:22:02Z" finished-at="2020-09-17T09:22:02Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Demo_Selenium.Check_Youtube_Message@17f6480]" name="afterTest" is-config="true" duration-ms="4194" started-at="2020-09-22T07:21:25Z" finished-at="2020-09-22T07:21:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
